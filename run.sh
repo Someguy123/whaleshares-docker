@@ -229,6 +229,7 @@ elif [[ "$NETWORK" == "blurt" ]]; then
 elif [[ "$NETWORK" == "whaleshares" ]]; then
     : ${DOCKER_IMAGE="whaleshares"}
     : ${DOCKER_NAME="wls"}
+    : ${SHM_DIR="${DATADIR}/shm"}
     : ${STEEM_SOURCE="https://gitlab.com/beyondbitcoin/whaleshares-chain/uploads/"}
 
     : ${NETWORK_NAME="whaleshares"}
