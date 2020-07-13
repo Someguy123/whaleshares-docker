@@ -29,6 +29,10 @@ RUN cd /tmp && \
     echo "Cleaning up ..." && \
     rm -rvf whaled whaled.tar.gz cli_wallet wallet.tar.gz
 
+RUN echo "Linking libreadline.so.7.0 to libreadline.so.6 and libreadline.so.6.0" && \
+    ln -v /lib/x86_64-linux-gnu/libreadline.so.7.0 /lib/x86_64-linux-gnu/libreadline.so.6 && \
+    ln -v /lib/x86_64-linux-gnu/libreadline.so.7.0 /lib/x86_64-linux-gnu/libreadline.so.6.0
+
 # P2P (seed) port
 EXPOSE 1776
 # RPC ports
