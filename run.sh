@@ -226,6 +226,33 @@ elif [[ "$NETWORK" == "blurt" ]]; then
     : ${DKR_RUN_BIN="blurtd"}       # Run this executable within the container
 
     : ${PORTS="2015"}
+elif [[ "$NETWORK" == "whaleshares" ]]; then
+    : ${DOCKER_IMAGE="wls"}
+    : ${STEEM_SOURCE="https://gitlab.com/beyondbitcoin/whaleshares-chain/uploads/"}
+
+    : ${NETWORK_NAME="whaleshares"}
+    : ${SELF_NAME="Whaleshares-in-a-box"}
+    
+    : ${BC_HTTP="http://files.privex.io/blockchains/whaleshares/block_log.lz4"}        # HTTP or HTTPS url to grab the blockchain from. Set compression in BC_HTTP_CMP
+    : ${BC_HTTP_RAW="http://files.privex.io/blockchains/whaleshares/block_log"}        # Uncompressed block_log over HTTP
+    : ${BC_HTTP_CMP="lz4"}                                           # Compression type, can be "xz", "lz4", or "no" (for no compression)
+    : ${BC_RSYNC="rsync://files.privex.io/blockchains/whaleshares/block_log"}          # Anonymous rsync daemon URL to the raw block_log
+    
+    : ${ROCKSDB_RSYNC="rsync://files.privex.io/blockchains/whaleshares/rocksdb/"}      # Rsync URL for MIRA RocksDB files
+
+    : ${DK_TAG_BASE="someguy123/whaleshares"}
+
+    : ${REMOTE_WS="wss://pubrpc.whaleshares.io"}
+    : ${REMOTE_RPC="https://pubrpc.whaleshares.io"}
+
+    : ${STOP_TIME=600}          # Amount of time in seconds to allow the docker container to stop before killing it.
+    : ${STEEM_RPC_PORT="8091"}  # Local steemd RPC port, used by commands such as 'monitor' which need to query your steemd's HTTP RPC
+
+    : ${DKR_DATA_MOUNT="/steem"}    # Mount $DATADIR onto this folder within the container
+    : ${DKR_SHM_MOUNT="/shm"}       # Mount $SHM_DIR onto this folder within the container
+    : ${DKR_RUN_BIN="whaled"}       # Run this executable within the container
+
+    : ${PORTS="1776"}
 fi
 
 
