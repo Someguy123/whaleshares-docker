@@ -35,6 +35,8 @@ seed-node = seed.whaleshares.bangzi.info:55505      # @bangzi           (DE, Nur
 seed-node = wseed.kidw.space:2001                   # @kid-witness      (DE)                 (ASN: Hetzner Online GmbH)
 seed-node = 164.68.126.180:2001                     # @ijmmai           (DE, Nuremberg)      (ASN: Contabo GmbH)
 seed-node = whaleseed-se.privex.io:1776             # www.privex.io     (SE, Stockholm)      (ASN: Privex Inc)
+seed-node = seed01.whaleshares.io:2001              # Whaleshares???    (FR)                 (ASN: Online S.a.s.)
+seed-node = seed02.whaleshares.io:2001              # Whaleshares???    (NL, Haarlem)        (ASN: Online S.a.s.)
 
 
 # --- (Potentially down / broken) ---
