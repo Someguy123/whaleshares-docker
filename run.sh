@@ -2070,7 +2070,7 @@ rpc-global-props() {
     fi
     # local rpc_url="https://steemd.privex.io/"
 
-    curl -fsSL --data '{"jsonrpc": "2.0", "method": "condenser_api.get_dynamic_global_properties", "params": [], "id": 1}' "$rpc_url"
+    curl -fsSL --data '{"jsonrpc": "2.0", "method": "database_api.get_dynamic_global_properties", "params": [], "id": 1}' "$rpc_url"
 }
 
 _LN="======================================================================\n"
