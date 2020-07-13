@@ -227,7 +227,8 @@ elif [[ "$NETWORK" == "blurt" ]]; then
 
     : ${PORTS="2015"}
 elif [[ "$NETWORK" == "whaleshares" ]]; then
-    : ${DOCKER_IMAGE="wls"}
+    : ${DOCKER_IMAGE="whaleshares"}
+    : ${DOCKER_NAME="wls"}
     : ${STEEM_SOURCE="https://gitlab.com/beyondbitcoin/whaleshares-chain/uploads/"}
 
     : ${NETWORK_NAME="whaleshares"}
