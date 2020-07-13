@@ -1,8 +1,16 @@
 # Endpoint for P2P node to listen on
-p2p-endpoint = 0.0.0.0:2015
+p2p-endpoint = 0.0.0.0:1776
 
 # Maxmimum number of incoming connections on P2P endpoint
 p2p-max-connections = 200
+
+# Whether to print backtrace on SIGSEGV
+backtrace = yes
+# a fullnode or a light-node(delayed-node)
+lightnode = 0
+
+# RPC endpoint of a trusted validating node.
+trusted-node = https://pubrpc.whaleshares.io
 
 # Shared file size
 shared-file-size = 16G
@@ -22,17 +30,41 @@ shared-file-scale-rate = 1000
 flush = 1000
 
 # P2P nodes to connect to on startup (may specify multiple times)
-p2p-seed-node = seed1.blurt.world:2001              #  @blurt       (DE)                 (ASN: Hetzner Online GmbH)
-p2p-seed-node = seed2.blurt.world:2001              #  @blurt       (DE)                 (ASN: Hetzner Online GmbH)
-p2p-seed-node = blurtseed-se.privex.io:2001         #  @privex      (SE)                 (ASN: Privex Inc.)
+p2p-seed-node = seed01.wls.services:2001            # baabeetaa
+p2p-seed-node = seed02.wls.services:2001            # baabeetaa
+p2p-seed-node = 173.212.235.53:2012                 # startail
+p2p-seed-node = seed.whaleshares.bangzi.info:55505  # bangzi
+p2p-seed-node = wseed.kidw.space:2001               # kid-witness
+
 
 # Pairs of [BLOCK_NUM,BLOCK_ID] that should be enforced as checkpoints.
 # checkpoint =
+
+# flush shared memory changes to disk every N blocks
+# flush-state-interval =
+
+# WLS_MAX_UNDO_HISTORY, default = 10000.
+max-undo = 10000
+
+# max limit n blocks in get_ops_in_blocks, default value is 10, set to 0 to disable get_ops_in_blocks.
+max-blocks = 0
+# Database edits to apply on startup (may specify multiple times)
+# edit-script =
+
+# Set the maximum size of cached feed for an account
+follow-max-feed-size = 200
+
+# json-rpc log directory name.
+# log-json-rpc =
+
 
 # Endpoint for websocket RPC to listen on
 
 webserver-http-endpoint = 0.0.0.0:8091
 webserver-ws-endpoint = 0.0.0.0:8090
+
+# Number of threads used to handle queries. Default: 2.
+webserver-thread-pool-size = 2
 
 # Endpoint for TLS websocket RPC to listen on
 # rpc-tls-endpoint =
