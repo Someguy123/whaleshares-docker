@@ -1,5 +1,8 @@
 FROM ubuntu:bionic
 
+RUN apt-get update && \
+    apt-get install -y unzip wget libbz2-dev libsnappy-dev libncurses5-dev libreadline-dev && \
+    apt-get clean -qy
 
 ARG steemd_version="e87e96053066136ae83831be91d390a7/whaled_lm-0.4.1-x86_64-linux.tar.gz"
 ENV steemd_version ${steemd_version}
@@ -7,9 +10,8 @@ ENV steemd_version ${steemd_version}
 ARG STEEM_SOURCE="https://gitlab.com/beyondbitcoin/whaleshares-chain/uploads/"
 ENV STEEM_SOURCE ${STEEM_SOURCE}
 
-RUN apt-get update && \
-    apt-get install -y unzip wget libbz2-dev libsnappy-dev libncurses5-dev libreadline-dev && \
-    apt-get clean -qy
+ARG WALLET_SOURCE="https://whaleshares.info/wls-download/cli_wallet-0.2.7-x86_64-linux.tar.gz"
+ENV WALLET_SOURCE ${WALLET_SOURCE}
 
 RUN cd /tmp && \
     echo " >>> Downloading whaleshares binary: ${STEEM_SOURCE}${steemd_version} ..." && \
@@ -18,8 +20,14 @@ RUN cd /tmp && \
     tar xvf whaled.tar.gz && \
     echo " >>> Installing whaled ..." && \
     cp -v whaled /usr/bin/whaled && \
+    echo " >>> Downloading cli_wallet binary: ${WALLET_SOURCE} ..." && \
+    wget -O wallet.tar.gz "${WALLET_SOURCE}" && \
+    echo " >>> Untarring wallet.tar.gz ..." && \
+    tar xvf wallet.tar.gz && \
+    echo " >>> Installing cli_wallet ..." && \
+    cp -v cli_wallet /usr/bin/cli_wallet && \
     echo "Cleaning up ..." && \
-    rm -rvf whaled whaled.tar.gz
+    rm -rvf whaled whaled.tar.gz cli_wallet wallet.tar.gz
 
 # P2P (seed) port
 EXPOSE 1776
