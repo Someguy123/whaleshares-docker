@@ -30,12 +30,13 @@ shared-file-scale-rate = 1000
 flush = 1000
 
 # P2P nodes to connect to on startup (may specify multiple times)
-p2p-seed-node = seed01.wls.services:2001            # baabeetaa
-p2p-seed-node = seed02.wls.services:2001            # baabeetaa
-p2p-seed-node = 173.212.235.53:2012                 # startail
-p2p-seed-node = seed.whaleshares.bangzi.info:55505  # bangzi
-p2p-seed-node = wseed.kidw.space:2001               # kid-witness
-
+seed-node = seed01.wls.services:2001            # baabeetaa
+seed-node = seed02.wls.services:2001            # baabeetaa
+seed-node = 173.212.235.53:2012                 # startail
+seed-node = seed.whaleshares.bangzi.info:55505  # bangzi
+seed-node = wseed.kidw.space:2001               # kid-witness
+seed-node = 164.68.126.180:2001                 # ijmmai
+seed-node = 62.112.11.63:2001                   # moonbase
 
 # Pairs of [BLOCK_NUM,BLOCK_ID] that should be enforced as checkpoints.
 # checkpoint =
