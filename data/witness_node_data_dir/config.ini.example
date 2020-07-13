@@ -30,13 +30,17 @@ shared-file-scale-rate = 1000
 flush = 1000
 
 # P2P nodes to connect to on startup (may specify multiple times)
-seed-node = seed01.wls.services:2001            # baabeetaa
-seed-node = seed02.wls.services:2001            # baabeetaa
-seed-node = 173.212.235.53:2012                 # startail
-seed-node = seed.whaleshares.bangzi.info:55505  # bangzi
-seed-node = wseed.kidw.space:2001               # kid-witness
-seed-node = 164.68.126.180:2001                 # ijmmai
-seed-node = 62.112.11.63:2001                   # moonbase
+seed-node = 173.212.235.53:2012                     # @startail         (DE, Nuremberg)      (ASN: Contabo GmbH)
+seed-node = seed.whaleshares.bangzi.info:55505      # @bangzi           (DE, Nuremberg)      (ASN: Contabo GmbH)
+seed-node = wseed.kidw.space:2001                   # @kid-witness      (DE)                 (ASN: Hetzner Online GmbH)
+seed-node = 164.68.126.180:2001                     # @ijmmai           (DE, Nuremberg)      (ASN: Contabo GmbH)
+seed-node = whaleseed-se.privex.io:1776             # www.privex.io     (SE, Stockholm)      (ASN: Privex Inc)
+
+
+# --- (Potentially down / broken) ---
+#seed-node = 62.112.11.63:2001                      # moonbase          (NL)                 (WorldStream B.V)
+#seed-node = seed01.wls.services:2001               # baabeetaa
+#seed-node = seed02.wls.services:2001               # baabeetaa
 
 # Pairs of [BLOCK_NUM,BLOCK_ID] that should be enforced as checkpoints.
 # checkpoint =
